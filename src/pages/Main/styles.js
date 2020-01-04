@@ -14,11 +14,7 @@ export const Header = styled(Nativebase.Header)`
   padding: 20px 20px 0px 20px;
 `;
 
-export const HeaderLeft = styled(Nativebase.Left)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
+export const HeaderLeft = styled(Nativebase.Left)``;
 
 export const HeaderIcon = styled(Nativebase.Icon)`
   color: ${colors.black};

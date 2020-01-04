@@ -10,7 +10,21 @@ import {
   Content,
   BottomContainer,
   TitleContainer,
-  Title
+  Title,
+  Price,
+  PlateRatingContainer,
+  PlateRating,
+  RatingCounter,
+  ShortcutContainer,
+  ShortcutItem,
+  ShortcutText,
+  InfoContainer,
+  InfoItem,
+  InfoIcon,
+  InfoText,
+  DescriptionContainer,
+  DescriptionTitle,
+  DescriptionContent,
 } from './styles';
 
 export default class Plate extends Component {
@@ -27,16 +41,56 @@ export default class Plate extends Component {
             </HeaderButton>
           </HeaderLeft>
           <HeaderRight>
-            <HeaderButton onPress={() => navigate('Tabs')} transparent>
+            <HeaderButton transparent>
               <HeaderIcon name="ios-heart-empty" />
             </HeaderButton>
           </HeaderRight>
         </Header>
         <Content>
+          <ShortcutContainer>
+            <ShortcutItem>
+              <ShortcutText>Café</ShortcutText>
+            </ShortcutItem>
+            <ShortcutItem>
+              <ShortcutText>Local</ShortcutText>
+            </ShortcutItem>
+            <ShortcutItem>
+              <ShortcutText>1 Pessoa</ShortcutText>
+            </ShortcutItem>
+          </ShortcutContainer>
           <BottomContainer>
             <TitleContainer>
               <Title>Torradas com blueberry</Title>
+              <Price>R$12,50</Price>
             </TitleContainer>
+            <PlateRatingContainer>
+              <PlateRating name="star" rated />
+              <PlateRating name="star" rated />
+              <PlateRating name="star" rated />
+              <PlateRating name="star" rated />
+              <PlateRating name="star" />
+              <RatingCounter>258 avaliações</RatingCounter>
+            </PlateRatingContainer>
+            <InfoContainer>
+              <InfoItem>
+                <InfoIcon name="user" type="EvilIcons" />
+                <InfoText>Serve 1 pessoa</InfoText>
+              </InfoItem>
+              <InfoItem>
+                <InfoIcon name="location" type="EvilIcons" />
+                <InfoText>
+                  Av. João Pessoa, 312 - Pedregulho, Guaratinguetá - SP
+                </InfoText>
+              </InfoItem>
+            </InfoContainer>
+            <DescriptionContainer>
+              <DescriptionTitle>Descrição</DescriptionTitle>
+              <DescriptionContent>
+                Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.
+                Pellentesque gravida, elit a gravida maximus, risus tortor
+                molestie urna, eget elementum est nisi in magna.
+              </DescriptionContent>
+            </DescriptionContainer>
           </BottomContainer>
         </Content>
       </Container>

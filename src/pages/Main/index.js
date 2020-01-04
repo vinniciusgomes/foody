@@ -53,7 +53,7 @@ class Main extends Component {
     const {navigate} = this.props.navigation;
     return (
       <Container>
-        <Header>
+        <Header noShadow>
           <HeaderLeft>
             <HeaderButton transparent>
               <HeaderIcon name="menu" />
