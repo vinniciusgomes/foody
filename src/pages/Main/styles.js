@@ -204,7 +204,6 @@ export const PopularTitle = styled.Text`
 `;
 
 export const PopularSubtitle = styled.Text`
-  margin-top: 10px;
   font-size: 16px;
   font-weight: 500;
   color: ${colors.grey};
