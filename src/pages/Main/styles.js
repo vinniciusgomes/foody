@@ -186,3 +186,47 @@ export const ShortcutText = styled.Text`
   font-size: 12px;
   color: ${colors.grey};
 `;
+
+export const PopularContainer = styled.View`
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+`;
+
+export const PopularTitleContainer = styled.View`
+  width: 100%;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+`;
+
+export const PopularTitle = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+`;
+
+export const PopularSubtitle = styled.Text`
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: ${colors.grey};
+`;
+
+export const PopularImageContainer = styled.View`
+  width: 100%;
+  padding-right: 20px;
+`;
+
+export const PopularImage = styled.Image`
+  margin-top: 20px;
+  width: 100%;
+  height: 184px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+`;
+
+export const PopularItem = styled.View`
+  width: 100% !important;
+`;

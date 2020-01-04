@@ -29,7 +29,14 @@ import {
   FieldContainer,
   ShortcutContainer,
   ShortcutItem,
-  ShortcutText
+  ShortcutText,
+  PopularContainer,
+  PopularTitleContainer,
+  PopularTitle,
+  PopularSubtitle,
+  PopularImageContainer,
+  PopularImage,
+  PopularItem,
 } from './styles';
 
 class Main extends Component {
@@ -139,6 +146,65 @@ class Main extends Component {
               <ShortcutText>Jantar</ShortcutText>
             </ShortcutItem>
           </ShortcutContainer>
+          <PopularContainer>
+            <PopularTitleContainer>
+              <PopularTitle>Popular</PopularTitle>
+              <ViewAllText>Ver todos</ViewAllText>
+            </PopularTitleContainer>
+            <PopularSubtitle>Os pratos mais visitados do dia:</PopularSubtitle>
+            <PlatesListContainer
+              horizontal
+              showsHorizontalScrollIndicator={false}>
+              <PopularItem>
+                <PopularImageContainer>
+                  <PopularImage
+                    source={require('~/static/images/plate4.jpg')}
+                  />
+                  <PlateRatingContainer>
+                    <PlateRating name="star" rated />
+                    <PlateRating name="star" rated />
+                    <PlateRating name="star" rated />
+                    <PlateRating name="star" rated />
+                    <PlateRating name="star" rated />
+                  </PlateRatingContainer>
+                  <PlateName numberOfLines={1}>Hamburguer do Chefe</PlateName>
+                  <RestaurantName numberOfLines={1}>
+                    Madero Hamburgueria
+                  </RestaurantName>
+                  <RestaurantLocationContainer>
+                    <RestaurantLocationIcon name="pin" />
+                    <RestaurantDistance numberOfLines={1}>
+                      13km de distância
+                    </RestaurantDistance>
+                  </RestaurantLocationContainer>
+                </PopularImageContainer>
+              </PopularItem>
+              <PopularItem>
+                <PopularImageContainer>
+                  <PopularImage
+                    source={require('~/static/images/plate5.jpg')}
+                  />
+                  <PlateRatingContainer>
+                    <PlateRating name="star" rated />
+                    <PlateRating name="star" rated />
+                    <PlateRating name="star" rated />
+                    <PlateRating name="star" rated />
+                    <PlateRating name="star" rated />
+                  </PlateRatingContainer>
+                  <PlateName numberOfLines={1}>Hamburguer do Chefe</PlateName>
+                  <RestaurantName numberOfLines={1}>
+                    Madero Hamburgueria
+                  </RestaurantName>
+                  <RestaurantLocationContainer>
+                    <RestaurantLocationIcon name="pin" />
+                    <RestaurantDistance numberOfLines={1}>
+                      13km de distância
+                    </RestaurantDistance>
+                  </RestaurantLocationContainer>
+                </PopularImageContainer>
+              </PopularItem>
+            </PlatesListContainer>
+          </PopularContainer>
         </Content>
       </Container>
     );
