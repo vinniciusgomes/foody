@@ -5,6 +5,7 @@ import colors from '~/static/colors';
 
 export const Container = styled.View`
   flex: 1;
+  background-color: ${colors.white};
 `;
 
 export const Header = styled(Nativebase.Header)`
