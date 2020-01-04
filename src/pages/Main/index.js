@@ -40,7 +40,17 @@ import {
 } from './styles';
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    console.log(this.props);
+  }
+
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <Container>
         <Header>
@@ -59,7 +69,7 @@ class Main extends Component {
             <PlatesListContainer
               horizontal
               showsHorizontalScrollIndicator={false}>
-              <PlateContainer>
+              <PlateContainer onPress={() => navigate('Plate')}>
                 <PlateImage source={require('~/static/images/plate1.jpg')} />
                 <PlateRatingContainer>
                   <PlateRating name="star" rated />

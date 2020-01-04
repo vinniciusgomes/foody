@@ -61,7 +61,7 @@ export const PlatesListContainer = styled.ScrollView`
   flex-direction: row;
 `;
 
-export const PlateContainer = styled.View`
+export const PlateContainer = styled.TouchableOpacity`
   margin-top: 15px;
   margin-right: 20px;
   width: 155px;
