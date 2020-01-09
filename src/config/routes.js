@@ -13,6 +13,9 @@ import Restaurants from '~/pages/Restaurants';
 import Profile from '~/pages/Profile';
 
 // StackPages
+import Intro from '~/pages/Intro';
+import SignInEmail from '~/pages/SignIn/Email';
+import SignInPassword from '~/pages/SignIn/Password';
 import Plate from '~/pages/Plate';
 
 const Tabs = createMaterialBottomTabNavigator(
@@ -71,7 +74,7 @@ const Tabs = createMaterialBottomTabNavigator(
   },
   {
     initialRouteName: 'Main',
-    activeColor: '#57C710',
+    activeColor: '#2DBB54',
     inactiveColor: '#1d1d1d',
     shifting: true,
     barStyle: {
@@ -97,15 +100,14 @@ const Stack = createSwitchNavigator(
     Tabs: {
       screen: Tabs,
     },
-    DrawerNavigator: {
-      screen: DrawerNavigator,
-      navigationOptions: {
-        gesturesEnabled: false,
-        gestureResponseDistance: {
-          horizontal: -1,
-          vertical: -1,
-        },
-      },
+    Intro: {
+      screen: Intro,
+    },
+    SignInEmail: {
+      screen: SignInEmail,
+    },
+    SignInPassword: {
+      screen: SignInPassword,
     },
     Plate: {
       screen: Plate,
@@ -113,7 +115,7 @@ const Stack = createSwitchNavigator(
   },
   {
     index: 0,
-    initialRouteName: 'Plate',
+    initialRouteName: 'Intro',
     headerMode: 'none',
     navigationOptions: {
       header: null,
@@ -135,7 +137,7 @@ const TopLevelNavigator = createSwitchNavigator(
         vertical: -1,
       },
     },
-    initialRouteName: 'Tabs',
+    initialRouteName: 'Stack',
     headerMode: 'none',
   },
 );
