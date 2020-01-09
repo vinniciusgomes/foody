@@ -109,7 +109,7 @@ export const ButtonText = styled.Text`
 export const ButtonIcon = styled(Nativebase.Icon)`
   font-size: 40px;
   margin-right: 20px;
-  color: ${props => (props.disabled ? '#979899' : colors.white)};
+  color: ${props => (props.disabled ? '#F7F8F9' : colors.white)};
 `;
 
 export const RecoveryPasswordContainer = styled.TouchableOpacity`
