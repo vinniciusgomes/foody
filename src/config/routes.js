@@ -7,16 +7,16 @@ import {Icon} from 'native-base';
 import NavigationService from './navigationService';
 import Sidebar from '~/components/Sidebar';
 
-// BottomTabNavigator
-import Main from '~/pages/Main';
-import Restaurants from '~/pages/Restaurants';
-import Profile from '~/pages/Profile';
+// Tabs Pages
+import Main from '~/pages/Tabs/Main';
+import Restaurants from '~/pages/Tabs/Restaurants';
+import Profile from '~/pages/Tabs/Profile';
 
-// StackPages
-import Intro from '~/pages/Intro';
-import SignInEmail from '~/pages/SignIn/Email';
-import SignInPassword from '~/pages/SignIn/Password';
-import Plate from '~/pages/Plate';
+// Stack Pages
+import Intro from '~/pages/Stack/Intro';
+import SignInEmail from '~/pages/Stack/SignIn/Email';
+import SignInPassword from '~/pages/Stack/SignIn/Password';
+import Plate from '~/pages/Stack/Plate';
 
 const Tabs = createMaterialBottomTabNavigator(
   {

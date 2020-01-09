@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import {Keyboard} from 'react-native'
 
+import Loading from '~/components/animations/Loading';
+import Confirmation from '~/components/animations/Confirmation';
 import {
   Container,
   FirstArea,
@@ -30,19 +33,35 @@ class Password extends Component {
     super(props);
     this.state = {
       password: null,
-      showPassword: true,
+      hidePassword: true,
+      loading: false,
+      success: false,
     };
   }
+
+  requestSignIn = () => {
+    Keyboard.dismiss()
+    this.setState({loading: true});
+    setTimeout(() => {
+      this.setState({success: true, loading: false});
+    }, 2000);
+    setTimeout(() => {
+      this.setState({success: false, loading: false});
+      this.props.navigation.navigate("Tabs")
+    }, 3150);
+  };
+
   render() {
-    const {password, showPassword} = this.state;
+    const {password, hidePassword, loading, success} = this.state;
     return (
       <Container>
+        {success ? <Confirmation /> : loading ? <Loading /> : null}
         <Content behavior="padding" enabled>
           <FirstArea>
             <Header noShadow>
               <HeaderLeft>
                 <HeaderButton
-                  onPress={() => this.props.navigation.navigate('Intro')}
+                  onPress={() => this.props.navigation.navigate('SignInEmail')}
                   transparent>
                   <HeaderIcon name="ios-arrow-round-back" />
                 </HeaderButton>
@@ -60,7 +79,7 @@ class Password extends Component {
                   clearTextOnFocus={false}
                   autoCapitalize="none"
                   autoCompleteType="off"
-                  secureTextEntry={showPassword}
+                  secureTextEntry={hidePassword}
                   onChangeText={password => this.setState({password: password})}
                   value={password}
                 />
@@ -72,7 +91,7 @@ class Password extends Component {
                     </InputActionClear>
                     <InputActionShow
                       onPress={() =>
-                        this.setState({showPassword: !showPassword})
+                        this.setState({hidePassword: !hidePassword})
                       }>
                       <InputActionShowText>Mostrar</InputActionShowText>
                     </InputActionShow>
@@ -86,7 +105,7 @@ class Password extends Component {
               <RecoveryPassword>Recuperar senha</RecoveryPassword>
             </RecoveryPasswordContainer>
             <Button
-              onPress={() => this.props.navigation.navigate('Tabs')}
+              onPress={() => this.requestSignIn()}
               disabled={password ? false : true}>
               <ButtonText disabled={password ? false : true}>
                 Continuar
