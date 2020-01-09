@@ -41,6 +41,7 @@ class Email extends Component {
             <FormContainer>
               <Title>Qual seu email?</Title>
               <Input
+                email
                 placeholder="exemplo@foodyapp.com"
                 placeholderTextColor="#D9DADB"
                 selectionColor="#2DBB54"

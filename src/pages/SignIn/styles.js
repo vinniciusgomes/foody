@@ -80,7 +80,7 @@ export const InputActionShowText = styled.Text`
 `;
 
 export const Input = styled.TextInput`
-  width: 75%;
+  width: ${props => (props.email ? '100%' : '75%')};
   margin-top: 20px;
   font-weight: 500;
   font-size: 20px;
