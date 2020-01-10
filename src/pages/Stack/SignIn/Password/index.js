@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Keyboard} from 'react-native'
+import {Keyboard} from 'react-native';
 
 import Loading from '~/components/animations/Loading';
 import Confirmation from '~/components/animations/Confirmation';
@@ -40,14 +40,14 @@ class Password extends Component {
   }
 
   requestSignIn = () => {
-    Keyboard.dismiss()
+    Keyboard.dismiss();
     this.setState({loading: true});
     setTimeout(() => {
       this.setState({success: true, loading: false});
     }, 2000);
     setTimeout(() => {
       this.setState({success: false, loading: false});
-      this.props.navigation.navigate("Tabs")
+      this.props.navigation.navigate('Tabs');
     }, 3150);
   };
 
@@ -58,7 +58,10 @@ class Password extends Component {
         {success ? <Confirmation /> : loading ? <Loading /> : null}
         <Content behavior="padding" enabled>
           <FirstArea>
-            <Header noShadow>
+            <Header
+              noShadow
+              androidStatusBarColor="#2DBB54"
+              barStyle="dark-content">
               <HeaderLeft>
                 <HeaderButton
                   onPress={() => this.props.navigation.navigate('SignInEmail')}

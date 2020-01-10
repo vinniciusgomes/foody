@@ -5,6 +5,8 @@ import {
   Container,
   Header,
   HeaderLeft,
+  HeaderBody,
+  HeaderRight,
   HeaderButton,
   HeaderIcon,
   LoadingContainer,
@@ -15,12 +17,14 @@ export default class Profile extends Component {
   render() {
     return (
       <Container>
-        <Header noShadow>
+        <Header noShadow androidStatusBarColor="#2DBB54" barStyle="dark-content">
           <HeaderLeft>
             <HeaderButton transparent>
               <HeaderIcon name="menu" />
             </HeaderButton>
           </HeaderLeft>
+          <HeaderBody />
+          <HeaderRight />
         </Header>
         <Content>
           <LoadingContainer>

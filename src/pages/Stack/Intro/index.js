@@ -3,9 +3,6 @@ import React, {Component} from 'react';
 import {
   Container,
   Header,
-  HeaderLeft,
-  HeaderButton,
-  HeaderIcon,
   Content,
   ImageShadow,
   ImageContainer,
@@ -29,7 +26,7 @@ class Intro extends Component {
   render() {
     return (
       <Container>
-        <Header noShadow />
+        <Header noShadow androidStatusBarColor="#2DBB54" barStyle="dark-content" />
         <Content>
           <ImageContainer>
             <ImageShadow>

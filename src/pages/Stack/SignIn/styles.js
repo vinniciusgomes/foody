@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Platform} from 'react-native';
 import * as Nativebase from 'native-base';
 
 import colors from '~/static/colors';
@@ -12,16 +13,22 @@ export const Container = styled.View`
 export const Header = styled(Nativebase.Header)`
   border-bottom-width: 0;
   background-color: ${colors.white};
-  padding: 20px 20px 0px 20px;
+  padding: ${Platform.OS === 'ios'
+    ? '20px 20px 0px 20px'
+    : '0px 20px 0px 20px'};
 `;
 
 export const HeaderLeft = styled(Nativebase.Left)``;
+
+export const HeaderBody = styled(Nativebase.Body)``;
+
+export const HeaderRight = styled(Nativebase.Right)``;
 
 export const HeaderIcon = styled(Nativebase.Icon)`
   color: #979899;
 `;
 
-export const HeaderButton = styled(Nativebase.Button)``;
+export const HeaderButton = styled.TouchableOpacity``;
 
 export const Content = styled.KeyboardAvoidingView`
   width: 100%;
@@ -38,6 +45,9 @@ export const SecondArea = styled.View``;
 export const FormContainer = styled.View`
   width: 100%;
   padding: 20px 20px 0 20px;
+  padding: ${Platform.OS === 'ios'
+    ? '20px 20px 0px 20px'
+    : '0px 20px 0px 20px'};
 `;
 
 export const Title = styled.Text`
@@ -81,7 +91,7 @@ export const InputActionShowText = styled.Text`
 
 export const Input = styled.TextInput`
   width: ${props => (props.email ? '100%' : '75%')};
-  margin-top: 20px;
+  margin-top: ${Platform.OS === 'ios' ? '20px' : '0px'};
   font-weight: 500;
   font-size: 20px;
   color: #494a4b;
@@ -90,6 +100,7 @@ export const Input = styled.TextInput`
 export const Button = styled.TouchableOpacity`
   width: 100%;
   height: 80px;
+  margin-bottom: ${Platform.OS === "ios" ? 0 : "-225px"}
   display: flex;
   flex-direction: row;
   align-items: center;

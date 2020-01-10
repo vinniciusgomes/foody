@@ -4,6 +4,7 @@ import {
   Container,
   Header,
   HeaderLeft,
+  HeaderBody,
   HeaderRight,
   HeaderButton,
   HeaderIcon,
@@ -34,14 +35,23 @@ export default class Plate extends Component {
       <Container
         source={require('~/static/images/plate1.jpg')}
         resizeMode="cover">
-        <Header iosBarStyle="light-content">
+        <Header
+          noShadow
+          androidStatusBarColor="#2DBB54"
+          iosBarStyle="light-content">
           <HeaderLeft>
-            <HeaderButton onPress={() => navigate('Tabs')} transparent>
+            <HeaderButton
+              hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}
+              onPress={() => navigate('Tabs')}
+              transparent>
               <HeaderIcon name="arrow-back" />
             </HeaderButton>
           </HeaderLeft>
+          <HeaderBody />
           <HeaderRight>
-            <HeaderButton transparent>
+            <HeaderButton
+              hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}
+              transparent>
               <HeaderIcon name="ios-heart-empty" />
             </HeaderButton>
           </HeaderRight>

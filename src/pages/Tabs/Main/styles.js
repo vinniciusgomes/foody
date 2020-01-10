@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Platform} from 'react-native';
 import * as Nativebase from 'native-base';
 
 import colors from '~/static/colors';
@@ -11,10 +12,14 @@ export const Container = styled.View`
 export const Header = styled(Nativebase.Header)`
   border-bottom-width: 0;
   background-color: ${colors.white};
-  padding: 20px 20px 0px 20px;
+  padding-left: ${Platform.OS === 'ios' ? '20px' : '12px'};
 `;
 
 export const HeaderLeft = styled(Nativebase.Left)``;
+
+export const HeaderBody = styled(Nativebase.Body)``;
+
+export const HeaderRight = styled(Nativebase.Right)``;
 
 export const HeaderIcon = styled(Nativebase.Icon)`
   color: ${colors.black};
@@ -27,7 +32,7 @@ export const Content = styled.ScrollView`
 `;
 
 export const PlatesContainer = styled.View`
-  margin-top: 20px;
+  margin-top: ${Platform.OS === 'ios' ? '20px' : '0px'};
   width: 100%;
 `;
 
@@ -67,7 +72,6 @@ export const PlateImage = styled.Image`
   width: 155px;
   height: 142px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 `;
 
 export const PlateRatingContainer = styled.View`
@@ -125,7 +129,8 @@ export const Seacth = styled.View`
   width: 100%;
   height: 48px;
   background-color: ${colors.white};
-  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.15);
+  border: 0.7px;
+  border-color: #eaebec;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -216,10 +221,9 @@ export const PopularImageContainer = styled.View`
 
 export const PopularImage = styled.Image`
   margin-top: 20px;
-  width: 100%;
+  width: ${Platform.OS === 'ios' ? '100%' : '92%'};
   height: 184px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 `;
 
 export const PopularItem = styled.View`

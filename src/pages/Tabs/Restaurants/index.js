@@ -5,6 +5,8 @@ import {
   Container,
   Header,
   HeaderLeft,
+  HeaderBody,
+  HeaderRight,
   HeaderButton,
   HeaderIcon,
   Content,
@@ -44,12 +46,14 @@ export default class BasicExample extends Component {
     const {loading} = this.state;
     return (
       <Container>
-        <Header noShadow>
+        <Header noShadow androidStatusBarColor="#2DBB54" barStyle="dark-content">
           <HeaderLeft>
             <HeaderButton transparent>
               <HeaderIcon name="menu" />
             </HeaderButton>
           </HeaderLeft>
+          <HeaderBody />
+          <HeaderRight />
         </Header>
         {loading ? (
           <LottieView
@@ -58,12 +62,12 @@ export default class BasicExample extends Component {
             source={require('~/animations/restaurant-loading.json')}
           />
         ) : (
-          <Content>
+          <Content showsVerticalScrollIndicator={false}>
             <TitleContainer>
               <Title>Restaurantes</Title>
               <MoreOptions name="more-vertical" type="Feather" />
             </TitleContainer>
-            <RestaurantsContainer showsVerticalScrollIndicator={false}>
+            <RestaurantsContainer>
               <RestaurantItem>
                 <RestaurantImageContainer>
                   <RestaurantImage

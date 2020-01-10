@@ -4,6 +4,8 @@ import {
   Container,
   Header,
   HeaderLeft,
+  HeaderBody,
+  HeaderRight,
   HeaderButton,
   HeaderIcon,
   Content,
@@ -29,14 +31,19 @@ class Email extends Component {
       <Container>
         <Content behavior="padding" enabled>
           <FirstArea>
-            <Header noShadow>
+            <Header
+              noShadow
+              androidStatusBarColor="#2DBB54"
+              barStyle="dark-content">
               <HeaderLeft>
                 <HeaderButton
                   onPress={() => this.props.navigation.navigate('Intro')}
-                  transparent>
+                  hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}>
                   <HeaderIcon name="ios-arrow-round-back" />
                 </HeaderButton>
               </HeaderLeft>
+              <HeaderBody />
+              <HeaderRight />
             </Header>
             <FormContainer>
               <Title>Qual seu email?</Title>
@@ -56,7 +63,9 @@ class Email extends Component {
               />
             </FormContainer>
           </FirstArea>
-          <Button onPress={() => this.props.navigation.navigate("SignInPassword")} disabled={emailAddress ? false : true}>
+          <Button
+            onPress={() => this.props.navigation.navigate('SignInPassword')}
+            disabled={emailAddress ? false : true}>
             <ButtonText disabled={emailAddress ? false : true}>
               Continuar
             </ButtonText>

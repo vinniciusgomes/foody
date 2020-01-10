@@ -37,6 +37,7 @@ import {
   PopularImageContainer,
   PopularImage,
   PopularItem,
+  HeaderBody,
 } from './styles';
 
 class Main extends Component {
@@ -53,14 +54,15 @@ class Main extends Component {
     const {navigate} = this.props.navigation;
     return (
       <Container>
-        <Header noShadow>
+        <Header noShadow androidStatusBarColor="#2DBB54" barStyle="dark-content">
           <HeaderLeft>
             <HeaderButton transparent>
               <HeaderIcon name="menu" />
             </HeaderButton>
           </HeaderLeft>
+          <HeaderBody />
         </Header>
-        <Content>
+        <Content showsVerticalScrollIndicator={false}>
           <PlatesContainer>
             <PlatesTitleContainer>
               <PlatesTitle>Café da manhã</PlatesTitle>

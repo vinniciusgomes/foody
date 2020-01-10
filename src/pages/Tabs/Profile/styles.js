@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Platform} from 'react-native';
 import * as Nativebase from 'native-base';
 
 import colors from '~/static/colors';
@@ -12,10 +13,14 @@ export const Container = styled.View`
 export const Header = styled(Nativebase.Header)`
   border-bottom-width: 0;
   background-color: ${colors.white};
-  padding: 20px 20px 0px 20px;
+  padding-left: ${Platform.OS === 'ios' ? '20px' : '12px'};
 `;
 
 export const HeaderLeft = styled(Nativebase.Left)``;
+
+export const HeaderBody = styled(Nativebase.Body)``;
+
+export const HeaderRight = styled(Nativebase.Right)``;
 
 export const HeaderIcon = styled(Nativebase.Icon)`
   color: ${colors.black};

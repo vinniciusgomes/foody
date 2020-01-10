@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Platform} from 'react-native';
 import * as Nativebase from 'native-base';
 
 import colors from '~/static/colors';
@@ -10,11 +11,16 @@ export const Container = styled.View`
 
 export const Header = styled(Nativebase.Header)`
   border-bottom-width: 0;
+  color: ${colors.black};
   background-color: ${colors.white};
-  padding: 20px 20px 0px 20px;
+  padding-left: ${Platform.OS === 'ios' ? '20px' : '12px'};
 `;
 
 export const HeaderLeft = styled(Nativebase.Left)``;
+
+export const HeaderBody = styled(Nativebase.Body)``;
+
+export const HeaderRight = styled(Nativebase.Right)``;
 
 export const HeaderIcon = styled(Nativebase.Icon)`
   color: ${colors.black};
@@ -22,14 +28,14 @@ export const HeaderIcon = styled(Nativebase.Icon)`
 
 export const HeaderButton = styled(Nativebase.Button)``;
 
-export const Content = styled.View`
+export const Content = styled.ScrollView`
   padding: 0px 20px 0px 20px;
   width: 100%;
 `;
 
 export const TitleContainer = styled.View`
   width: 100%;
-  margin-top: 20px;
+  margin-top: ${Platform.OS === 'ios' ? '20px' : '0px'};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,10 +52,9 @@ export const MoreOptions = styled(Nativebase.Icon)`
   font-weight: bold;
 `;
 
-export const RestaurantsContainer = styled.ScrollView`
+export const RestaurantsContainer = styled.View`
   width: 100%;
   margin-top: 20px;
-  margin-bottom: 100px;
 `;
 
 export const RestaurantItem = styled.TouchableOpacity`
@@ -65,16 +70,15 @@ export const RestaurantImageContainer = styled.View`
 `;
 
 export const RestaurantImage = styled.Image`
-  width: 155px;
-  height: 142px;
+  width: ${Platform.OS === 'ios' ? '155px' : '145px'};
+  height: ${Platform.OS === 'ios' ? '142px' : '132px'};
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 `;
 
 export const RestaurantInfo = styled.View`
-  height: 142px;
+  height: ${Platform.OS === 'ios' ? '142px' : '132px'};
   width: 45%;
-  margin-left: 15px;
+  margin-left: ${Platform.OS === 'ios' ? '15px' : '25px'};
 `;
 
 export const RestaurantTitleContainer = styled.View`

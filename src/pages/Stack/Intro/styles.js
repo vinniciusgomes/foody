@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Platform} from 'react-native';
 import * as Nativebase from 'native-base';
 
 import colors from '~/static/colors';
@@ -15,14 +16,6 @@ export const Header = styled(Nativebase.Header)`
   background-color: ${colors.white};
   margin-top: -20px;
 `;
-
-export const HeaderLeft = styled(Nativebase.Left)``;
-
-export const HeaderIcon = styled(Nativebase.Icon)`
-  color: ${colors.black};
-`;
-
-export const HeaderButton = styled(Nativebase.Button)``;
 
 export const Content = styled.ScrollView`
   padding: 0 20px 0 20px;
@@ -122,7 +115,7 @@ export const CreateAccountContainer = styled.View`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: ${Platform.OS === 'ios' ? '40px' : '20px'};
 `;
 
 export const CreateAccount = styled.TouchableOpacity``;

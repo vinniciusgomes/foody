@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Platform} from 'react-native';
 import * as Nativebase from 'native-base';
 
 import colors from '~/static/colors';
@@ -10,8 +11,11 @@ export const Container = styled.ImageBackground`
 export const Header = styled(Nativebase.Header)`
   border-bottom-width: 0;
   background-color: transparent;
-  padding: 20px 20px 0px 20px;
+  padding-left: ${Platform.OS === 'ios' ? '20px' : '13px'};
+  padding-right: ${Platform.OS === 'ios' ? '20px' : '13px'};
 `;
+
+export const HeaderBody = styled(Nativebase.Body)``;
 
 export const HeaderLeft = styled(Nativebase.Left)`
   display: flex;
@@ -29,7 +33,7 @@ export const HeaderIcon = styled(Nativebase.Icon)`
   color: ${colors.white};
 `;
 
-export const HeaderButton = styled(Nativebase.Button)``;
+export const HeaderButton = styled.TouchableOpacity``;
 
 export const Content = styled.View`
   width: 100%;
@@ -39,12 +43,13 @@ export const Content = styled.View`
 
 export const BottomContainer = styled.View`
   width: 100%;
-  height: 51%;
+  height: ${Platform.OS === 'ios' ? '51%' : '59%'};
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   background-color: ${colors.white};
-  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.15);
-  padding: 40px 20px 20px 20px;
+  padding: ${Platform.OS === 'ios'
+    ? '40px 20px 20px 20px'
+    : '20px 20px 20px 20px'};
 `;
 
 export const TitleContainer = styled.View`
