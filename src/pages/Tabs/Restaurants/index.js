@@ -55,7 +55,7 @@ export default class BasicExample extends Component {
           <LottieView
             autoPlay
             loop
-            source={require('~/animations/location.json')}
+            source={require('~/animations/restaurant-loading.json')}
           />
         ) : (
           <Content>
