@@ -88,6 +88,9 @@
 		871AFCBD2BBF43F48C308BAF /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		8A406CCB559C424CB3558078 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
 		8FFDB0A564B2EC6C22AE6EC6 /* Pods-foody-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foody-tvOS.release.xcconfig"; path = "Target Support Files/Pods-foody-tvOS/Pods-foody-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		925EE69923CA5ED20086FE43 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		925EE69D23CA60D70086FE43 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		925EE6A123CA613D0086FE43 /* CoreModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BAA602A26038EED7B7B3A0 /* Pods-foody-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foody-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-foody-tvOSTests/Pods-foody-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF87395C78341C59F5DD9C0 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		9F9EC7BFAC2241F0989081C3 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -177,6 +180,9 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				925EE6A123CA613D0086FE43 /* CoreModules.framework */,
+				925EE69D23CA60D70086FE43 /* Lottie.framework */,
+				925EE69923CA5ED20086FE43 /* Lottie.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				86C9D2ACE759A82C774DEC77 /* Pods_foody.framework */,
@@ -764,7 +770,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foody.app/foody";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foody.app/Foody";
 			};
 			name = Debug;
 		};
@@ -786,7 +792,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foody.app/foody";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foody.app/Foody";
 			};
 			name = Release;
 		};
