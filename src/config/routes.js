@@ -76,7 +76,7 @@ const Tabs = createMaterialBottomTabNavigator(
     initialRouteName: 'Main',
     activeColor: '#2DBB54',
     inactiveColor: '#1d1d1d',
-    shifting: true,
+
     barStyle: {
       backgroundColor: '#fff',
     },

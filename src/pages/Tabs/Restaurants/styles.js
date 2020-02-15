@@ -44,12 +44,14 @@ export const TitleContainer = styled.View`
 
 export const Title = styled.Text`
   font-size: 24px;
-  font-weight: bold;
+  color: #222222;
+  font-weight: ${Platform.OS === 'ios' ? 600 : 'bold'};
 `;
 
 export const MoreOptions = styled(Nativebase.Icon)`
   font-size: 24px;
-  font-weight: bold;
+  color: #222222;
+  font-weight: ${Platform.OS === 'ios' ? 600 : 'bold'};
 `;
 
 export const RestaurantsContainer = styled.View`
@@ -89,7 +91,8 @@ export const RestaurantTitleContainer = styled.View`
 
 export const RestaurantTitle = styled.Text`
   font-size: 20px;
-  font-weight: bold;
+  font-weight: ${Platform.OS === 'ios' ? 600 : 'bold'};
+  color: #222222;
 `;
 
 export const RestaurantVerificationIcon = styled(Nativebase.Icon)`

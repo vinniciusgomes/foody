@@ -12,33 +12,16 @@ import {
   PlatesTitle,
   ViewAllText,
   PlatesListContainer,
-  PlateContainer,
-  PlateImage,
-  PlateRatingContainer,
-  PlateRating,
-  PlateName,
-  RestaurantName,
-  RestaurantLocationContainer,
-  RestaurantLocationIcon,
-  RestaurantDistance,
-  SearchContainer,
-  Seacth,
-  SearchInputContainer,
-  SearchIcon,
-  Field,
-  FieldContainer,
-  ShortcutContainer,
-  ShortcutItem,
-  ShortcutText,
   PopularContainer,
   PopularTitleContainer,
   PopularTitle,
   PopularSubtitle,
-  PopularImageContainer,
-  PopularImage,
-  PopularItem,
   HeaderBody,
+  PopularPlatesContainer,
 } from './styles';
+import Plate from '~/components/Main/Plates';
+import Search from '~/components/Main/Search';
+import Popular from '~/components/Main/Popular';
 
 class Main extends Component {
   constructor(props) {
@@ -46,15 +29,16 @@ class Main extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   render() {
     const {navigate} = this.props.navigation;
     return (
       <Container>
-        <Header noShadow androidStatusBarColor="#2DBB54" barStyle="dark-content">
+        <Header
+          noShadow
+          androidStatusBarColor="#2DBB54"
+          barStyle="dark-content">
           <HeaderLeft>
             <HeaderButton transparent>
               <HeaderIcon name="menu" />
@@ -71,151 +55,73 @@ class Main extends Component {
             <PlatesListContainer
               horizontal
               showsHorizontalScrollIndicator={false}>
-              <PlateContainer onPress={() => navigate('Plate')}>
-                <PlateImage source={require('~/static/images/plate1.jpg')} />
-                <PlateRatingContainer>
-                  <PlateRating name="star" rated />
-                  <PlateRating name="star" rated />
-                  <PlateRating name="star" rated />
-                  <PlateRating name="star" />
-                  <PlateRating name="star" />
-                </PlateRatingContainer>
-                <PlateName numberOfLines={1}>Torradas com blueberry</PlateName>
-                <RestaurantName numberOfLines={1}>
-                  Panificadora Keromais
-                </RestaurantName>
-                <RestaurantLocationContainer>
-                  <RestaurantLocationIcon name="pin" />
-                  <RestaurantDistance numberOfLines={1}>
-                    3km de distância
-                  </RestaurantDistance>
-                </RestaurantLocationContainer>
-              </PlateContainer>
-              <PlateContainer>
-                <PlateImage source={require('~/static/images/plate2.jpg')} />
-                <PlateRatingContainer>
-                  <PlateRating name="star" rated />
-                  <PlateRating name="star" rated />
-                  <PlateRating name="star" rated />
-                  <PlateRating name="star" rated />
-                  <PlateRating name="star" />
-                </PlateRatingContainer>
-                <PlateName numberOfLines={1}>Ovos benedict</PlateName>
-                <RestaurantName numberOfLines={1}>
-                  StarBucks Coffee
-                </RestaurantName>
-                <RestaurantLocationContainer>
-                  <RestaurantLocationIcon name="pin" />
-                  <RestaurantDistance numberOfLines={1}>
-                    4.2km de distância
-                  </RestaurantDistance>
-                </RestaurantLocationContainer>
-              </PlateContainer>
-              <PlateContainer>
-                <PlateImage source={require('~/static/images/plate3.jpg')} />
-                <PlateRatingContainer>
-                  <PlateRating name="star" rated />
-                  <PlateRating name="star" rated />
-                  <PlateRating name="star" />
-                  <PlateRating name="star" />
-                  <PlateRating name="star" />
-                </PlateRatingContainer>
-                <PlateName numberOfLines={1}>Café com croissant</PlateName>
-                <RestaurantName numberOfLines={1}>
-                  Panificadora Aeroclub
-                </RestaurantName>
-                <RestaurantLocationContainer>
-                  <RestaurantLocationIcon name="pin" />
-                  <RestaurantDistance numberOfLines={1}>
-                    5.1km de distância
-                  </RestaurantDistance>
-                </RestaurantLocationContainer>
-              </PlateContainer>
+              <Plate
+                image="~/assets/static/plate1.jpg"
+                restaurantColor="#2D8FBB"
+                restaurantName="Two Little Red Hens"
+                plateName="Toast with blueberry"
+                rating="4,98"
+                price={25}
+              />
+              <Plate
+                image="~/assets/static/plate1.jpg"
+                restaurantColor="#8FBB2D"
+                restaurantName="StarBucks"
+                plateName="Eggs benedict"
+                rating="4,98"
+                price={18}
+              />
+              <Plate
+                image="~/assets/static/plate1.jpg"
+                restaurantColor="#006C70"
+                restaurantName="Two Little Red Hens"
+                plateName="Eggs benedict"
+                rating="4,98"
+                price={12}
+              />
             </PlatesListContainer>
           </PlatesContainer>
-          <SearchContainer>
-            <Seacth>
-              <SearchInputContainer>
-                <FieldContainer>
-                  <SearchIcon name="search" />
-                  <Field placeholder="Pesquisar..." />
-                </FieldContainer>
-                <SearchIcon name="close" />
-              </SearchInputContainer>
-            </Seacth>
-          </SearchContainer>
-          <ShortcutContainer>
-            <ShortcutItem>
-              <ShortcutText>Café</ShortcutText>
-            </ShortcutItem>
-            <ShortcutItem>
-              <ShortcutText>Almoço</ShortcutText>
-            </ShortcutItem>
-            <ShortcutItem>
-              <ShortcutText>Doce</ShortcutText>
-            </ShortcutItem>
-            <ShortcutItem>
-              <ShortcutText>Jantar</ShortcutText>
-            </ShortcutItem>
-          </ShortcutContainer>
+          <Search />
           <PopularContainer>
             <PopularTitleContainer>
               <PopularTitle>Popular</PopularTitle>
               <ViewAllText>Ver todos</ViewAllText>
             </PopularTitleContainer>
             <PopularSubtitle>Os pratos mais visitados do dia:</PopularSubtitle>
-            <PlatesListContainer
-              horizontal
-              showsHorizontalScrollIndicator={false}>
-              <PopularItem>
-                <PopularImageContainer>
-                  <PopularImage
-                    source={require('~/static/images/plate4.jpg')}
-                  />
-                  <PlateRatingContainer>
-                    <PlateRating name="star" rated />
-                    <PlateRating name="star" rated />
-                    <PlateRating name="star" rated />
-                    <PlateRating name="star" rated />
-                    <PlateRating name="star" rated />
-                  </PlateRatingContainer>
-                  <PlateName numberOfLines={1}>Hamburguer do Chefe</PlateName>
-                  <RestaurantName numberOfLines={1}>
-                    Madero Hamburgueria
-                  </RestaurantName>
-                  <RestaurantLocationContainer>
-                    <RestaurantLocationIcon name="pin" />
-                    <RestaurantDistance numberOfLines={1}>
-                      13km de distância
-                    </RestaurantDistance>
-                  </RestaurantLocationContainer>
-                </PopularImageContainer>
-              </PopularItem>
-              <PopularItem>
-                <PopularImageContainer>
-                  <PopularImage
-                    source={require('~/static/images/plate5.jpg')}
-                  />
-                  <PlateRatingContainer>
-                    <PlateRating name="star" rated />
-                    <PlateRating name="star" rated />
-                    <PlateRating name="star" rated />
-                    <PlateRating name="star" rated />
-                    <PlateRating name="star" rated />
-                  </PlateRatingContainer>
-                  <PlateName numberOfLines={1}>Hamburguer do Chefe</PlateName>
-                  <RestaurantName numberOfLines={1}>
-                    Madero Hamburgueria
-                  </RestaurantName>
-                  <RestaurantLocationContainer>
-                    <RestaurantLocationIcon name="pin" />
-                    <RestaurantDistance numberOfLines={1}>
-                      13km de distância
-                    </RestaurantDistance>
-                  </RestaurantLocationContainer>
-                </PopularImageContainer>
-              </PopularItem>
-            </PlatesListContainer>
+            <PopularPlatesContainer>
+              <Popular
+                image="~/assets/static/plate1.jpg"
+                restaurantColor="#2D8FBB"
+                restaurantName="Two Little Red Hens"
+                plateName="Toast with blueberry"
+                rating="4,98"
+                price={25}
+              />
+              <Popular
+                image="~/assets/static/plate1.jpg"
+                restaurantColor="#2D8FBB"
+                restaurantName="Two Little Red Hens"
+                plateName="Toast with blueberry"
+                rating="4,98"
+                price={25}
+              />
+              <Popular
+                image="~/assets/static/plate1.jpg"
+                restaurantColor="#2D8FBB"
+                restaurantName="Two Little Red Hens"
+                plateName="Toast with blueberry"
+                rating="4,98"
+                price={25}
+              />
+              <Popular
+                image="~/assets/static/plate1.jpg"
+                restaurantColor="#2D8FBB"
+                restaurantName="Two Little Red Hens"
+                plateName="Toast with blueberry"
+                rating="4,98"
+                price={25}
+              />
+            </PopularPlatesContainer>
           </PopularContainer>
         </Content>
       </Container>

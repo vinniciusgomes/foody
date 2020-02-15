@@ -28,6 +28,7 @@ export const HeaderIcon = styled(Nativebase.Icon)`
 export const HeaderButton = styled(Nativebase.Button)``;
 
 export const Content = styled.ScrollView`
+  width: 100%;
   padding: 0 0px 0 20px;
 `;
 
@@ -47,13 +48,14 @@ export const PlatesTitleContainer = styled.View`
 
 export const PlatesTitle = styled.Text`
   font-size: 24px;
-  font-weight: bold;
+  color: #222222;
+  font-weight: ${Platform.OS === 'ios' ? 600 : 'bold'};
 `;
 
 export const ViewAllText = styled.Text`
   font-size: 12px;
-  font-weight: 500;
-  color: ${colors.grey};
+  font-weight: 400;
+  color: #222222;
 `;
 
 export const PlatesListContainer = styled.ScrollView`
@@ -71,121 +73,7 @@ export const PlateContainer = styled.TouchableOpacity`
 export const PlateImage = styled.Image`
   width: 155px;
   height: 142px;
-  border-radius: 10px;
-`;
-
-export const PlateRatingContainer = styled.View`
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-`;
-
-export const PlateRating = styled(Nativebase.Icon)`
-  color: ${props => (props.rated ? colors.yellow : colors.grey)};
-  font-size: 20px;
-  margin-right: 3px;
-`;
-
-export const PlateName = styled.Text`
-  margin-top: 5px;
-  font-size: 17px;
-  font-weight: 600;
-  color: ${colors.black};
-`;
-
-export const RestaurantName = styled.Text`
-  margin-top: 5px;
-  font-size: 12px;
-  color: ${colors.grey};
-  font-weight: 400;
-`;
-
-export const RestaurantLocationContainer = styled.View`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 3px;
-`;
-
-export const RestaurantLocationIcon = styled(Nativebase.Icon)`
-  color: ${colors.grey};
-  font-size: 15px;
-  margin-right: 5px;
-`;
-
-export const RestaurantDistance = styled.Text`
-  font-size: 12px;
-  color: ${colors.grey};
-  font-weight: 400;
-`;
-
-export const SearchContainer = styled.View`
-  width: 100%;
-  padding-right: 20px;
-  margin-top: 30px;
-`;
-
-export const Seacth = styled.View`
-  width: 100%;
-  height: 48px;
-  background-color: ${colors.white};
-  border: 0.7px;
-  border-color: #eaebec;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export const SearchInputContainer = styled.View`
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px 0 20px;
-`;
-
-export const SearchIcon = styled(Nativebase.Icon)`
-  color: ${colors.black};
-  font-size: 22px;
-`;
-
-export const FieldContainer = styled.View`
-  display: flex;
-  width: 81%;
-  flex-direction: row;
-  align-items: center;
-`;
-
-export const Field = styled.TextInput`
-  width: 100%;
-  margin-left: 20px;
-`;
-
-export const ShortcutContainer = styled.View`
-  width: 100%;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  padding: 0 30px 0 10px;
-`;
-
-export const ShortcutItem = styled.TouchableOpacity`
-  width: 70px;
-  height: 25px;
-  background-color: #f4f4f4;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const ShortcutText = styled.Text`
-  font-size: 12px;
-  color: ${colors.grey};
+  border-radius: 5px;
 `;
 
 export const PopularContainer = styled.View`
@@ -205,27 +93,23 @@ export const PopularTitleContainer = styled.View`
 
 export const PopularTitle = styled.Text`
   font-size: 24px;
-  font-weight: bold;
+  font-weight: ${Platform.OS === 'ios' ? 600 : 'bold'};
+  color: #222222;
 `;
 
 export const PopularSubtitle = styled.Text`
-  font-size: 16px;
-  font-weight: 500;
-  color: ${colors.grey};
+  font-size: 14px;
+  font-weight: 400;
+  color: #222222;
+  margin-bottom: 15px;
 `;
 
-export const PopularImageContainer = styled.View`
+export const PopularPlatesContainer = styled.View`
   width: 100%;
-  padding-right: 20px;
-`;
-
-export const PopularImage = styled.Image`
-  margin-top: 20px;
-  width: ${Platform.OS === 'ios' ? '100%' : '92%'};
-  height: 184px;
-  border-radius: 10px;
-`;
-
-export const PopularItem = styled.View`
-  width: 100% !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-right: 0px;
+  justify-content: space-between;
 `;
