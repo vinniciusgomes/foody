@@ -81,6 +81,7 @@ const Tabs = createMaterialBottomTabNavigator(
       backgroundColor: '#fff',
     },
     backBehavior: true,
+    animationEnabled: false,
   },
 );
 
@@ -92,6 +93,7 @@ const DrawerNavigator = createDrawerNavigator(
     contentComponent: Sidebar,
     drawerBackgroundColor: '#FFF',
     drawerWidth: 300,
+    animationEnabled: false,
   },
 );
 
@@ -120,6 +122,7 @@ const Stack = createSwitchNavigator(
     navigationOptions: {
       header: null,
       gesturesEnabled: false,
+      animationEnabled: false,
     },
   },
 );
@@ -137,6 +140,8 @@ const TopLevelNavigator = createSwitchNavigator(
         vertical: -1,
       },
     },
+    animationEnabled: false,
+    gestureEnabled: false,
     initialRouteName: 'Stack',
     headerMode: 'none',
   },

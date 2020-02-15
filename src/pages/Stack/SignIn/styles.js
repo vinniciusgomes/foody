@@ -13,9 +13,6 @@ export const Container = styled.View`
 export const Header = styled(Nativebase.Header)`
   border-bottom-width: 0;
   background-color: ${colors.white};
-  padding: ${Platform.OS === 'ios'
-    ? '20px 20px 0px 20px'
-    : '0px 20px 0px 20px'};
 `;
 
 export const HeaderLeft = styled(Nativebase.Left)``;
@@ -28,7 +25,11 @@ export const HeaderIcon = styled(Nativebase.Icon)`
   color: #979899;
 `;
 
-export const HeaderButton = styled.TouchableOpacity``;
+export const HeaderButton = styled(Nativebase.Button)`
+  background-color: rgba(0, 0, 0, 0);
+  margin-left: -11px;
+  elevation: 0;
+`;
 
 export const Content = styled.KeyboardAvoidingView`
   width: 100%;
@@ -38,13 +39,16 @@ export const Content = styled.KeyboardAvoidingView`
   justify-content: space-between;
 `;
 
-export const FirstArea = styled.View``;
+export const FirstArea = styled.View`
+  background-color: #ffffff;
+`;
 
-export const SecondArea = styled.View``;
+export const SecondArea = styled.View`
+  background-color: #ffffff;
+`;
 
 export const FormContainer = styled.View`
   width: 100%;
-  padding: 20px 20px 0 20px;
   padding: ${Platform.OS === 'ios'
     ? '20px 20px 0px 20px'
     : '0px 20px 0px 20px'};
@@ -72,8 +76,10 @@ export const InputActionsContainer = styled.View`
   margin-top: 23px;
 `;
 
-export const InputActionClear = styled.TouchableOpacity`
-  margin-right: 20px;
+export const InputActionClear = styled(Nativebase.Button)`
+  background-color: rgba(0, 0, 0, 0);
+  elevation: 0;
+  margin-top: -20px;
 `;
 
 export const InputActionClearIcon = styled(Nativebase.Icon)`
@@ -81,7 +87,11 @@ export const InputActionClearIcon = styled(Nativebase.Icon)`
   font-size: 15px;
 `;
 
-export const InputActionShow = styled.TouchableOpacity``;
+export const InputActionShow = styled(Nativebase.Button)`
+  background-color: rgba(0, 0, 0, 0);
+  elevation: 0;
+  margin-top: -20px;
+`;
 
 export const InputActionShowText = styled.Text`
   font-size: 12px;
@@ -97,10 +107,9 @@ export const Input = styled.TextInput`
   color: #494a4b;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled(Nativebase.Button)`
   width: 100%;
   height: 80px;
-  margin-bottom: ${Platform.OS === "ios" ? 0 : "-225px"}
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -108,6 +117,7 @@ export const Button = styled.TouchableOpacity`
   background-color: ${props => (props.disabled ? '#F7F8F9' : colors.green)};
   border-top-width: 1px;
   border-top-color: ${props => (props.disabled ? '#eaebec' : colors.green)};
+  elevation: 0;
 `;
 
 export const ButtonText = styled.Text`
@@ -123,10 +133,12 @@ export const ButtonIcon = styled(Nativebase.Icon)`
   color: ${props => (props.disabled ? '#F7F8F9' : colors.white)};
 `;
 
-export const RecoveryPasswordContainer = styled.TouchableOpacity`
+export const RecoveryPasswordContainer = styled(Nativebase.Button)`
   width: 100%;
   padding-left: 20px;
   margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0);
+  elevation: 0;
 `;
 
 export const RecoveryPassword = styled.Text`

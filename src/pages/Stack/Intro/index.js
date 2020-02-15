@@ -26,7 +26,11 @@ class Intro extends Component {
   render() {
     return (
       <Container>
-        <Header noShadow androidStatusBarColor="#2DBB54" barStyle="dark-content" />
+        <Header
+          noShadow
+          androidStatusBarColor="#2DBB54"
+          barStyle="dark-content"
+        />
         <Content>
           <ImageContainer>
             <ImageShadow>
@@ -56,7 +60,8 @@ class Intro extends Component {
             </Button>
             <Button
               onPress={() => this.props.navigation.navigate('Tabs')}
-              outline>
+              outline
+              backgroundColor="#ffffff">
               <ButtonContentContainer>
                 <ButtonImage source={require('~/static/images/google.png')} />
                 <ButtonText color="#1D1D1D">Entrar com Google</ButtonText>

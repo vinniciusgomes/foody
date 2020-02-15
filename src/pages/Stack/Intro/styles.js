@@ -72,9 +72,10 @@ export const ButtonContainer = styled.View`
   margin-top: 40px;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled(Nativebase.Button)`
   width: 325px;
   height: 53px;
+  elevation: 0;
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : colors.white};
   margin-bottom: 20px;
@@ -115,10 +116,13 @@ export const CreateAccountContainer = styled.View`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: ${Platform.OS === 'ios' ? '40px' : '20px'};
+  margin-top: ${Platform.OS === 'ios' ? '20px' : '10px'};
 `;
 
-export const CreateAccount = styled.TouchableOpacity``;
+export const CreateAccount = styled(Nativebase.Button)`
+  elevation: 0;
+  background-color: rgba(0, 0, 0, 0);
+`;
 
 export const CreateAccountText = styled.Text`
   font-size: 17px;

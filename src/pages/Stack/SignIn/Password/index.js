@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Keyboard} from 'react-native';
+import {Keyboard, Platform} from 'react-native';
 
 import Loading from '~/components/animations/Loading';
 import Confirmation from '~/components/animations/Confirmation';
@@ -8,6 +8,8 @@ import {
   FirstArea,
   Header,
   HeaderLeft,
+  HeaderBody,
+  HeaderRight,
   HeaderButton,
   HeaderIcon,
   Content,
@@ -56,7 +58,9 @@ class Password extends Component {
     return (
       <Container>
         {success ? <Confirmation /> : loading ? <Loading /> : null}
-        <Content behavior="padding" enabled>
+        <Content
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          enabled>
           <FirstArea>
             <Header
               noShadow
@@ -64,11 +68,12 @@ class Password extends Component {
               barStyle="dark-content">
               <HeaderLeft>
                 <HeaderButton
-                  onPress={() => this.props.navigation.navigate('SignInEmail')}
-                  transparent>
+                  onPress={() => this.props.navigation.navigate('Intro')}>
                   <HeaderIcon name="ios-arrow-round-back" />
                 </HeaderButton>
               </HeaderLeft>
+              <HeaderBody />
+              <HeaderRight />
             </Header>
             <FormContainer>
               <Title>Senha</Title>
@@ -76,7 +81,6 @@ class Password extends Component {
                 <Input
                   placeholder="************"
                   placeholderTextColor="#D9DADB"
-                  selectionColor="#2DBB54"
                   keyboardType="email-address"
                   autoCorrect={false}
                   clearTextOnFocus={false}

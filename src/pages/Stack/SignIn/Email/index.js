@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Platform} from 'react-native';
 
 import {
   Container,
@@ -29,7 +30,9 @@ class Email extends Component {
     const {emailAddress} = this.state;
     return (
       <Container>
-        <Content behavior="padding" enabled>
+        <Content
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          enabled>
           <FirstArea>
             <Header
               noShadow
@@ -37,8 +40,7 @@ class Email extends Component {
               barStyle="dark-content">
               <HeaderLeft>
                 <HeaderButton
-                  onPress={() => this.props.navigation.navigate('Intro')}
-                  hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}>
+                  onPress={() => this.props.navigation.navigate('Intro')}>
                   <HeaderIcon name="ios-arrow-round-back" />
                 </HeaderButton>
               </HeaderLeft>
@@ -51,7 +53,6 @@ class Email extends Component {
                 email
                 placeholder="exemplo@foodyapp.com"
                 placeholderTextColor="#D9DADB"
-                selectionColor="#2DBB54"
                 keyboardType="email-address"
                 autoCorrect={false}
                 autoCapitalize="none"
