@@ -50,8 +50,8 @@ export const SecondArea = styled.View`
 export const FormContainer = styled.View`
   width: 100%;
   padding: ${Platform.OS === 'ios'
-    ? '20px 20px 0px 20px'
-    : '0px 20px 0px 20px'};
+    ? '20px 16px 0px 16px'
+    : '0px 16px 0px 16px'};
 `;
 
 export const Title = styled.Text`

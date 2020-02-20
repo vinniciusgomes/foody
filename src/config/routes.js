@@ -10,6 +10,7 @@ import Sidebar from '~/components/Sidebar';
 // Tabs Pages
 import Main from '~/pages/Tabs/Main';
 import Restaurants from '~/pages/Tabs/Restaurants';
+import Feed from '~/pages/Tabs/Feed';
 import Profile from '~/pages/Tabs/Profile';
 
 // Stack Pages
@@ -17,6 +18,7 @@ import Intro from '~/pages/Stack/Intro';
 import SignInEmail from '~/pages/Stack/SignIn/Email';
 import SignInPassword from '~/pages/Stack/SignIn/Password';
 import Plate from '~/pages/Stack/Plate';
+import ListPlates from '~/pages/Stack/ListPlates';
 
 const Tabs = createMaterialBottomTabNavigator(
   {
@@ -54,6 +56,23 @@ const Tabs = createMaterialBottomTabNavigator(
         ),
       }),
     },
+    Feed: {
+      screen: Feed,
+      navigationOptions: () => ({
+        gestureResponseDistance: {
+          horizontal: -1,
+          vertical: -1,
+        },
+        tabBarLabel: 'Feed',
+        tabBarIcon: ({tintColor}) => (
+          <Icon
+            name="newspaper"
+            type="MaterialCommunityIcons"
+            style={{color: tintColor, fontSize: 23}}
+          />
+        ),
+      }),
+    },
     Profile: {
       screen: Profile,
       navigationOptions: () => ({
@@ -75,13 +94,13 @@ const Tabs = createMaterialBottomTabNavigator(
   {
     initialRouteName: 'Main',
     activeColor: '#2DBB54',
-    inactiveColor: '#1d1d1d',
-
+    inactiveColor: '#222222',
+    shifting: true,
     barStyle: {
       backgroundColor: '#fff',
     },
     backBehavior: true,
-    animationEnabled: false,
+    animationEnabled: true,
   },
 );
 
@@ -93,7 +112,7 @@ const DrawerNavigator = createDrawerNavigator(
     contentComponent: Sidebar,
     drawerBackgroundColor: '#FFF',
     drawerWidth: 300,
-    animationEnabled: false,
+    animationEnabled: true,
   },
 );
 
@@ -114,6 +133,9 @@ const Stack = createSwitchNavigator(
     Plate: {
       screen: Plate,
     },
+    ListPlates: {
+      screen: ListPlates,
+    },
   },
   {
     index: 0,
@@ -122,7 +144,7 @@ const Stack = createSwitchNavigator(
     navigationOptions: {
       header: null,
       gesturesEnabled: false,
-      animationEnabled: false,
+      animationEnabled: true,
     },
   },
 );
@@ -140,7 +162,7 @@ const TopLevelNavigator = createSwitchNavigator(
         vertical: -1,
       },
     },
-    animationEnabled: false,
+    animationEnabled: true,
     gestureEnabled: false,
     initialRouteName: 'Stack',
     headerMode: 'none',

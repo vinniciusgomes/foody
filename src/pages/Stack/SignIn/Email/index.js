@@ -36,8 +36,8 @@ class Email extends Component {
           <FirstArea>
             <Header
               noShadow
-              androidStatusBarColor="#2DBB54"
-              barStyle="dark-content">
+              androidStatusBarColor="#ffffff"
+              iosBarStyle="dark-content">
               <HeaderLeft>
                 <HeaderButton
                   onPress={() => this.props.navigation.navigate('Intro')}>

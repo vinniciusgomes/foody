@@ -11,9 +11,8 @@ export const Container = styled.View`
 
 export const Header = styled(Nativebase.Header)`
   border-bottom-width: 0;
-  color: ${colors.black};
   background-color: ${colors.white};
-  padding-left: ${Platform.OS === 'ios' ? '20px' : '12px'};
+  padding-left: ${Platform.OS === 'ios' ? '16px' : '8px'};
 `;
 
 export const HeaderLeft = styled(Nativebase.Left)``;
@@ -29,7 +28,7 @@ export const HeaderIcon = styled(Nativebase.Icon)`
 export const HeaderButton = styled(Nativebase.Button)``;
 
 export const Content = styled.ScrollView`
-  padding: 0px 20px 0px 20px;
+  padding: 0px 16px 0px 16px;
   width: 100%;
 `;
 
@@ -74,7 +73,7 @@ export const RestaurantImageContainer = styled.View`
 export const RestaurantImage = styled.Image`
   width: ${Platform.OS === 'ios' ? '155px' : '145px'};
   height: ${Platform.OS === 'ios' ? '142px' : '132px'};
-  border-radius: 10px;
+  border-radius: 5px;
 `;
 
 export const RestaurantInfo = styled.View`

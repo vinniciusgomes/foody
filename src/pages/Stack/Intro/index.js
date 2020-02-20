@@ -28,8 +28,8 @@ class Intro extends Component {
       <Container>
         <Header
           noShadow
-          androidStatusBarColor="#2DBB54"
-          barStyle="dark-content"
+          androidStatusBarColor="#ffffff"
+          iosBarStyle="dark-content"
         />
         <Content>
           <ImageContainer>

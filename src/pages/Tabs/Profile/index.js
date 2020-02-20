@@ -17,7 +17,10 @@ export default class Profile extends Component {
   render() {
     return (
       <Container>
-        <Header noShadow androidStatusBarColor="#2DBB54" barStyle="dark-content">
+        <Header
+          noShadow
+          androidStatusBarColor="#ffffff"
+          iosBarStyle="dark-content">
           <HeaderLeft>
             <HeaderButton transparent>
               <HeaderIcon name="menu" />

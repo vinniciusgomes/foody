@@ -18,7 +18,7 @@ export const Header = styled(Nativebase.Header)`
 `;
 
 export const Content = styled.ScrollView`
-  padding: 0 20px 0 20px;
+  padding: 0 16px 0 16px;
 `;
 
 export const ImageContainer = styled.View`

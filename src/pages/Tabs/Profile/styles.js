@@ -13,7 +13,7 @@ export const Container = styled.View`
 export const Header = styled(Nativebase.Header)`
   border-bottom-width: 0;
   background-color: ${colors.white};
-  padding-left: ${Platform.OS === 'ios' ? '20px' : '12px'};
+  padding-left: ${Platform.OS === 'ios' ? '16px' : '8px'};
 `;
 
 export const HeaderLeft = styled(Nativebase.Left)``;

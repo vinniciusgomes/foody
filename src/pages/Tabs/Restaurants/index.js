@@ -39,14 +39,17 @@ export default class BasicExample extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({loading: false});
-    }, 4000);
+    }, 1000);
   }
 
   render() {
     const {loading} = this.state;
     return (
       <Container>
-        <Header noShadow androidStatusBarColor="#2DBB54" barStyle="dark-content">
+        <Header
+          noShadow
+          androidStatusBarColor="#ffffff"
+          iosBarStyle="dark-content">
           <HeaderLeft>
             <HeaderButton transparent>
               <HeaderIcon name="menu" />
